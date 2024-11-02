@@ -38,7 +38,7 @@ public sealed class UIManager : MonoBehaviour
         inpElem4 = _uiDocument.rootVisualElement.Q<TextField>("IPTextField4");
 
         inpElem5 = _uiDocument.rootVisualElement.Q<TextField>("NamespaceInputField");
-        inpElem6 = _uiDocument.rootVisualElement.Q<TextField>("ScreenHeightInputField");
+        inpElem6 = _uiDocument.rootVisualElement.Q<TextField>("PortInputField");
 
         headerElement = _uiDocument.rootVisualElement.Q<VisualElement>("Header");
         _h = Screen.height * 0.1f;
@@ -61,8 +61,7 @@ public sealed class UIManager : MonoBehaviour
             ros = ROSConnection.GetOrCreateInstance();
             ros.ConnectOnStart = false;
             ros.RosIPAddress = ipAddress;
-            ros.RosIPAddress = ipAddress;
-            ros.RosPort = 10000;
+            ros.RosPort = int.Parse(inpElem6.text);;
             ros.ShowHud = false;
             ros.NetworkTimeoutSeconds = 1f; 
             ros.listenForTFMessages = false;
@@ -70,7 +69,6 @@ public sealed class UIManager : MonoBehaviour
             rosObject = GameObject.Find("ROSConnectionPrefab(Clone)");
             rosObject.AddComponent<ValueTransport>();
             rosObject.GetComponent<ValueTransport>().rosNamespace = inpElem5.text;
-            rosObject.GetComponent<ValueTransport>().screenHeight = float.Parse(inpElem6.text);
             
             ros.Connect();
 

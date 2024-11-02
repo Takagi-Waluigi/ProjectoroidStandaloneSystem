@@ -5,6 +5,5 @@ using UnityEngine;
 public class ValueTransport : MonoBehaviour
 {
     public string rosNamespace = "";
-    public float screenHeight = 1.0f;
     public bool connectionError = false;
 }
