@@ -10,6 +10,7 @@ public sealed class UIManager : MonoBehaviour
 {
     //[SerializeField] GameObject sampleButtonUI;
     [SerializeField] UIDocument _uiDocument;
+    [SerializeField] string firstSceneName = "ProjectionTestScene";
     
     TextField inpElem1, inpElem2, inpElem3, inpElem4, inpElem5, inpElem6;
     Label label;
@@ -24,35 +25,44 @@ public sealed class UIManager : MonoBehaviour
     float duration = 1 / 30f;
     void Start()
     {
+        //UI関連のエレメントを各変数と紐付け
+        //接続ボタン
         var connectElement = _uiDocument.rootVisualElement.Q<Label>("Connect");
         connectElement.AddManipulator(new Clickable(ButtonClicked));
 
+        //終了ボタン
         var quitElement = _uiDocument.rootVisualElement.Q<Label>("Quit");
         quitElement.AddManipulator(new Clickable(QuitButtonClicked));
 
+        //上部文字列
         label = _uiDocument.rootVisualElement.Q<Label>("DescriptionText1");
 
+        //IPアドレス
         inpElem1 = _uiDocument.rootVisualElement.Q<TextField>("IPTextField1");
         inpElem2 = _uiDocument.rootVisualElement.Q<TextField>("IPTextField2");
         inpElem3 = _uiDocument.rootVisualElement.Q<TextField>("IPTextField3");
         inpElem4 = _uiDocument.rootVisualElement.Q<TextField>("IPTextField4");
 
+        //名前空間の入力欄
         inpElem5 = _uiDocument.rootVisualElement.Q<TextField>("NamespaceInputField");
         inpElem6 = _uiDocument.rootVisualElement.Q<TextField>("PortInputField");
 
+        //ヘッダ
         headerElement = _uiDocument.rootVisualElement.Q<VisualElement>("Header");
         _h = Screen.height * 0.1f;
 
+        //ROSConnectionPrefabがあり、かつ、なんらかエラーを吐いている場合例外処理と、ユーザへ通知
         rosObject = GameObject.Find("ROSConnectionPrefab(Clone)");
         if(rosObject != null && rosObject.GetComponent<ValueTransport>().connectionError)
         {
             label.text = "Settings Menu --[ERROR] Connection Failed.";
-            label.style.color = errorColor;
+            label.style.color = errorColor; //文字色は赤
         }
     }
 
     void ButtonClicked()
     {
+        //すべての入力項目が満たされている場合の処理
         if(inpElem1.text != "" && inpElem2.text != "" && inpElem3.text != "" && inpElem4.text != "" && inpElem5.text != "" && inpElem6.text != "")
         {
             enableTransition = true;
@@ -69,12 +79,14 @@ public sealed class UIManager : MonoBehaviour
             rosObject = GameObject.Find("ROSConnectionPrefab(Clone)");
             rosObject.AddComponent<ValueTransport>();
             rosObject.GetComponent<ValueTransport>().rosNamespace = inpElem5.text;
+
+            rosObject.AddComponent<QuitApplication>();
             
             ros.Connect();
 
             DontDestroyOnLoad(rosObject);            
         }
-        else
+        else //入力に不備がある場合
         {
             label.text = "Settings Menu --[ERROR] Please Fill All Forms.";
             label.style.color = errorColor;
@@ -104,7 +116,7 @@ public sealed class UIManager : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene("MainContent");
+                    SceneManager.LoadScene(firstSceneName);
                 }
             }
         }

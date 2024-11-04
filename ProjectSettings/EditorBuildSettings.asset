@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SubScene/IPAddressInput.unity
+    path: Assets/Scenes/IPAddressInput.unity
     guid: 40fbd5fef39eb3a46b4560c040bbb7d7
   - enabled: 1
-    path: Assets/Scenes/MainScenes/MainContent.unity
+    path: Assets/Scenes/PacMan/MainContent.unity
     guid: 1e28ed8fde822184a953fc5f64b2123a
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/ProjectionTestScene.unity
+    guid: d5f92c95515b7e62a88e23a36285d6cf
   m_configObjects: {}

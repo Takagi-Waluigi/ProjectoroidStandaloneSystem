@@ -19,10 +19,9 @@ public class MapTransformer : MonoBehaviour
     void Start()
     {
         ReadMap();
-        AdjustCamera();
+        //AdjustCamera();
     }
 
-    #if UNITY_EDITOR
     [ContextMenu("Transform Map")]
     void ReadMap() {
         var scaleX = resolution * pixelSize.x * 0.1f;
@@ -42,5 +41,4 @@ public class MapTransformer : MonoBehaviour
         float cameraSize = Mathf.Max(mapSize.x * mapSizeScale, mapSize.y * mapSizeScale);
         Camera.main.orthographicSize = cameraSize;
     }
-    #endif
 }
