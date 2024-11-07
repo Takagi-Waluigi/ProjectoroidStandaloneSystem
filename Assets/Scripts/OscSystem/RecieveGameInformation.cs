@@ -6,6 +6,7 @@ public class RecieveGameInformation : MonoBehaviour
 {
     public int score = 0;
     public int hitPoint = 0;
+    public bool isGameOver = false;
     public float timeRemainf = 0f;
     // Start is called before the first frame update
     void Start()
@@ -19,11 +20,11 @@ public class RecieveGameInformation : MonoBehaviour
         
     }
 
-    public void RecieveStaticGameInfo(Vector2Int info)
+    public void RecieveStaticGameInfo(Vector3 info)
     {
-        score = info.x;
-        hitPoint = info.y;
-        //Debug.Log("info log:" + info);
+        score = (int)info.x;
+        hitPoint = (int)info.y;
+        isGameOver = ((int)info.z > 0);
     } 
 
     public void RecieveRemainTimef(float info)
