@@ -389,6 +389,7 @@ MonoBehaviour:
   audioSource: {fileID: 194925758}
   scoreUpSoundEffect: {fileID: 8300000, guid: 0486d6c5be43bb7cd9d199e510c1e210, type: 3}
   hitSoundEffect: {fileID: 8300000, guid: 4ced79b197b326f72a2f4c2c9ac01bfd, type: 3}
+  gameOverSoundEffect: {fileID: 8300000, guid: e143165b744c17d4e8d731e37f9c883e, type: 3}
 --- !u!1 &379912544
 GameObject:
   m_ObjectHideFlags: 0
