@@ -18,7 +18,7 @@ public class MapTransformer : MonoBehaviour
 
     void Start()
     {
-        ReadMap();
+        //ReadMap();
         //AdjustCamera();
     }
 
