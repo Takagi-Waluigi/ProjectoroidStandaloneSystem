@@ -8,6 +8,7 @@ public class RecieveGameInformation : MonoBehaviour
     public int hitPoint = 0;
     public bool isGameOver = false;
     public float timeRemainf = 0f;
+    public float decisionTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +28,10 @@ public class RecieveGameInformation : MonoBehaviour
         isGameOver = ((int)info.z > 0);
     } 
 
-    public void RecieveRemainTimef(float info)
+    public void RecieveRemainTimef(Vector2 info)
     {
-        timeRemainf = info;
+        timeRemainf = info.x;
+        decisionTime = info.y;
         //Debug.Log("time remain:" + info);
     }
 }
