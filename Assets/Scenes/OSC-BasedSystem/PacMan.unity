@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 118743369}
   - component: {fileID: 118743368}
   - component: {fileID: 118743371}
+  - component: {fileID: 118743372}
   m_Layer: 0
   m_Name: ProjectionCamera
   m_TagString: Untagged
@@ -231,6 +232,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deactivateTime: 2
   isReciveingInfo: 0
+--- !u!114 &118743372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118743367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a29a21e28dec0fbb21dbbe99208b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 118743369}
 --- !u!1 &194925755
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +689,7 @@ GameObject:
   - component: {fileID: 581238032}
   - component: {fileID: 581238035}
   - component: {fileID: 581238034}
+  - component: {fileID: 581238036}
   m_Layer: 0
   m_Name: MyRobot
   m_TagString: Untagged
@@ -805,6 +820,60 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _vector4Event:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector2IntEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector3IntEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &581238036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581238031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f8f979447c54247bcba0d5441e6081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _connection: {fileID: 11400000, guid: c5d12db412678ed44955e55ea61bceae, type: 2}
+  _oscAddress: /screenSize
+  _dataType: 2
+  _event:
+    m_PersistentCalls:
+      m_Calls: []
+  _intEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _floatEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 118743372}
+        m_TargetAssemblyTypeName: RecieveScreenSize, Assembly-CSharp
+        m_MethodName: RecieveScreenSizeInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _vector2Event:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector3Event:
+    m_PersistentCalls:
+      m_Calls: []
   _vector4Event:
     m_PersistentCalls:
       m_Calls: []
@@ -2071,13 +2140,13 @@ MonoBehaviour:
   _vector4Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 194925756}
+        m_TargetAssemblyTypeName: RecieveGameInformation, Assembly-CSharp
+        m_MethodName: RecieveStaticGameInfo
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
