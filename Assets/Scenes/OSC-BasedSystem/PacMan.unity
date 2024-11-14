@@ -1144,7 +1144,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8770265437810633608, guid: 0830ff2414ba4811988b2c42e7abfd6a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1861339474}
   m_SourcePrefab: {fileID: 100100000, guid: 0830ff2414ba4811988b2c42e7abfd6a, type: 3}
 --- !u!1 &816275197
 GameObject:
@@ -1372,6 +1375,11 @@ Transform:
   - {fileID: 1861339473}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &978640052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8770265437810633608, guid: 0830ff2414ba4811988b2c42e7abfd6a, type: 3}
+  m_PrefabInstance: {fileID: 772487819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1020498184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,6 +2540,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1675844984831915648, guid: 0830ff2414ba4811988b2c42e7abfd6a, type: 3}
   m_PrefabInstance: {fileID: 772487819}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1861339474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978640052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b12ffa7940fdc34cbedc3fea6b5c638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deactivateTime: 2
+  isForScreenBlind: 0
+  isReciveingInfo: 0
 --- !u!1 &2010721412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2569,7 @@ GameObject:
   - component: {fileID: 2010721414}
   - component: {fileID: 2010721417}
   - component: {fileID: 2010721418}
+  - component: {fileID: 2010721419}
   m_Layer: 0
   m_Name: GameInfo
   m_TagString: Untagged
@@ -2874,6 +2898,60 @@ MonoBehaviour:
   _vector3Event:
     m_PersistentCalls:
       m_Calls: []
+  _vector4Event:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector2IntEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector3IntEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2010721419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010721412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f8f979447c54247bcba0d5441e6081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _connection: {fileID: 11400000, guid: c5d12db412678ed44955e55ea61bceae, type: 2}
+  _oscAddress: /course/position
+  _dataType: 5
+  _event:
+    m_PersistentCalls:
+      m_Calls: []
+  _intEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector2Event:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector3Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1861339474}
+        m_TargetAssemblyTypeName: ReceiveTransform, Assembly-CSharp
+        m_MethodName: RecivePosition
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _vector4Event:
     m_PersistentCalls:
       m_Calls: []
