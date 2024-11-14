@@ -2125,6 +2125,7 @@ GameObject:
   - component: {fileID: 1649502114}
   - component: {fileID: 1649502113}
   - component: {fileID: 1649502112}
+  - component: {fileID: 1649502116}
   m_Layer: 0
   m_Name: ProjectionBlind
   m_TagString: Untagged
@@ -2234,6 +2235,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649502110}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1649502116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649502110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7abdcd41ca1e1c92a23133d988c9313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showProjectionBlind: 0
 --- !u!1001 &1700631595
 PrefabInstance:
   m_ObjectHideFlags: 0
