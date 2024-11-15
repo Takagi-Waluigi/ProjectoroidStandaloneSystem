@@ -8,27 +8,41 @@ public class GamePlayUIManager : MonoBehaviour
 {
     [SerializeField] RecieveGameInformation info;
     [SerializeField] UIDocument _uiDocument;
-    Label scoreElement, hitPointElement;
+    [SerializeField] int channel = 0;
+    Label scoreElement, subInfoElement;
     // Start is called before the first frame update
     void Start()
     {
         scoreElement = _uiDocument.rootVisualElement.Q<Label>("Score");
-        hitPointElement = _uiDocument.rootVisualElement.Q<Label>("HitPoint");
+        subInfoElement = _uiDocument.rootVisualElement.Q<Label>("SubInfo");
         
     }   
 
     // Update is called once per frame
     void Update()
     { 
-        //❤ ❤ ❤ ❤ ❤ 
-        scoreElement.text = info.score.ToString();
+        //scoreElement.text = info.score.ToString();
 
-        string hitPointHeart = "";
-        for(int i = 0; i < 5 - info.hitPoint; i ++)
+        switch(channel)
         {
-            hitPointHeart += "❤";
-        }
+            case 0:
+                scoreElement.text = info.score.ToString();
+                //❤ ❤ ❤ ❤ ❤ 
+                string hitPointHeart = "";
+                for(int i = 0; i < 5 - info.hitPoint; i ++)
+                {
+                    hitPointHeart += "❤";
+                }
 
-        hitPointElement.text = hitPointHeart;
+                subInfoElement.text = hitPointHeart;
+            break;
+
+            case 1:
+                scoreElement.text = info.score.ToString();
+                subInfoElement.text = "Time: " + info.timeRemainf.ToString("f2");
+            break;
+
+        }
+        
     }
 }
