@@ -410,9 +410,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 194925756}
   audioSource: {fileID: 194925758}
-  scoreUpSoundEffect: {fileID: 8300000, guid: 0486d6c5be43bb7cd9d199e510c1e210, type: 3}
+  scoreUpSoundEffect: {fileID: 8300000, guid: b01d82b7a67de6d10ad504bd2beaf942, type: 3}
   hitSoundEffect: {fileID: 8300000, guid: 4ced79b197b326f72a2f4c2c9ac01bfd, type: 3}
-  gameOverSoundEffect: {fileID: 8300000, guid: e143165b744c17d4e8d731e37f9c883e, type: 3}
+  gameOverSoundEffect: {fileID: 8300000, guid: 84f5cac5c917afc0fbcf44a9f3d1a3bc, type: 3}
 --- !u!114 &194925760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +476,51 @@ Transform:
   - {fileID: 1649502111}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &456355350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 456355351}
+  - component: {fileID: 456355352}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &456355351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456355350}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.9196255, y: -0.3461275, z: -0.45513558}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1490629949}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &456355352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456355350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac8432c4c4428380aa126f12beeee0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneDestination: PacMan
 --- !u!1 &579782574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,6 +1473,7 @@ Transform:
   - {fileID: 194925757}
   - {fileID: 672572727}
   - {fileID: 1094854381}
+  - {fileID: 456355351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1490629950
