@@ -1618,9 +1618,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2857844088465035613, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857844088465035613, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857844088465035613, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.054734796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857844088465035613, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.054734796
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857844088465035613, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.05660379
+      objectReference: {fileID: 0}
     - target: {fileID: 4720415720194188635, guid: 6e257990df54f50479878b5d11627a21, type: 3}
       propertyPath: m_Name
-      value: ProjectionCamera (1)
+      value: ProjectionCamera
       objectReference: {fileID: 0}
     - target: {fileID: 7910644213390780331, guid: 6e257990df54f50479878b5d11627a21, type: 3}
       propertyPath: ratio
