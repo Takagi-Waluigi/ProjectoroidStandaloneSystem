@@ -5,9 +5,12 @@ using UnityEngine;
 public class RecieveScreenSize : MonoBehaviour
 {
     [SerializeField] Camera camera;
+    [SerializeField] UserAreaVisualControl userAreaVisualControl;
 
-    public void RecieveScreenSizeInfo(float info)
+    public void RecieveScreenSizeInfo(Vector3 info)
     {
-        camera.orthographicSize = info;
+        camera.orthographicSize = info.x;
+        userAreaVisualControl.blurWidthRatio = info.y;
+        userAreaVisualControl.blurScale = info.z;
     }
 }

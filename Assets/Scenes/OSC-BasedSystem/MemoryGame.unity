@@ -707,7 +707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _connection: {fileID: 11400000, guid: c5d12db412678ed44955e55ea61bceae, type: 2}
   _oscAddress: /screenSize
-  _dataType: 2
+  _dataType: 5
   _event:
     m_PersistentCalls:
       m_Calls: []
@@ -734,7 +734,19 @@ MonoBehaviour:
       m_Calls: []
   _vector3Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1607424122}
+        m_TargetAssemblyTypeName: RecieveScreenSize, Assembly-CSharp
+        m_MethodName: RecieveScreenSizeInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _vector4Event:
     m_PersistentCalls:
       m_Calls: []
@@ -1638,12 +1650,20 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0.05660379
       objectReference: {fileID: 0}
+    - target: {fileID: 3643141930864208579, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      propertyPath: userAreaVisualControl
+      value: 
+      objectReference: {fileID: 1607424124}
     - target: {fileID: 4720415720194188635, guid: 6e257990df54f50479878b5d11627a21, type: 3}
       propertyPath: m_Name
       value: ProjectionCamera
       objectReference: {fileID: 0}
     - target: {fileID: 7910644213390780331, guid: 6e257990df54f50479878b5d11627a21, type: 3}
       propertyPath: ratio
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910644213390780331, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      propertyPath: blurWidthRatio
       value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8860568502889972833, guid: 6e257990df54f50479878b5d11627a21, type: 3}
@@ -1680,6 +1700,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b12ffa7940fdc34cbedc3fea6b5c638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1607424124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7910644213390780331, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+  m_PrefabInstance: {fileID: 1607424120}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0749a5ad9232d984ebf1ca97451f18c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1717909400 stripped

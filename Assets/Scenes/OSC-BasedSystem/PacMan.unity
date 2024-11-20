@@ -132,7 +132,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8860568502889972833, guid: 6e257990df54f50479878b5d11627a21, type: 3}
   m_PrefabInstance: {fileID: 5590643264617915515}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 320419346}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b12ffa7940fdc34cbedc3fea6b5c638, type: 3}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3643141930864208579, guid: 6e257990df54f50479878b5d11627a21, type: 3}
   m_PrefabInstance: {fileID: 5590643264617915515}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 320419346}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50a29a21e28dec0fbb21dbbe99208b3c, type: 3}
@@ -435,6 +435,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b12ffa7940fdc34cbedc3fea6b5c638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &320419346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4720415720194188635, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+  m_PrefabInstance: {fileID: 5590643264617915515}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &379912544
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &579782576
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -810,7 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _connection: {fileID: 11400000, guid: c5d12db412678ed44955e55ea61bceae, type: 2}
   _oscAddress: /screenSize
-  _dataType: 2
+  _dataType: 5
   _event:
     m_PersistentCalls:
       m_Calls: []
@@ -837,7 +842,19 @@ MonoBehaviour:
       m_Calls: []
   _vector3Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 118743372}
+        m_TargetAssemblyTypeName: RecieveScreenSize, Assembly-CSharp
+        m_MethodName: RecieveScreenSizeInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _vector4Event:
     m_PersistentCalls:
       m_Calls: []
@@ -1905,6 +1922,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 397913635}
     m_Modifications:
+    - target: {fileID: 3998510282058837549, guid: dd1edb67a1e00d34fb50dedc3d6028e7, type: 3}
+      propertyPath: intereval
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 7611310738874197307, guid: dd1edb67a1e00d34fb50dedc3d6028e7, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -3258,12 +3279,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 3643141930864208579, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      propertyPath: userAreaVisualControl
+      value: 
+      objectReference: {fileID: 5590643264617915516}
     - target: {fileID: 4720415720194188635, guid: 6e257990df54f50479878b5d11627a21, type: 3}
       propertyPath: m_Name
       value: ProjectionCamera
       objectReference: {fileID: 0}
     - target: {fileID: 7910644213390780331, guid: 6e257990df54f50479878b5d11627a21, type: 3}
       propertyPath: ratio
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910644213390780331, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      propertyPath: blurWidthRatio
       value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8860568502889972833, guid: 6e257990df54f50479878b5d11627a21, type: 3}
@@ -3273,8 +3302,82 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4720415720194188635, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5590643264617915519}
   m_SourcePrefab: {fileID: 100100000, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+--- !u!114 &5590643264617915516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7910644213390780331, guid: 6e257990df54f50479878b5d11627a21, type: 3}
+  m_PrefabInstance: {fileID: 5590643264617915515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320419346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0749a5ad9232d984ebf1ca97451f18c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5590643264617915519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320419346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 118743370}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
