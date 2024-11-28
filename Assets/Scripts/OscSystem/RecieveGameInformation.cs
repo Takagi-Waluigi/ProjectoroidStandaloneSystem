@@ -10,6 +10,8 @@ public class RecieveGameInformation : MonoBehaviour
     public bool isTrackingUser = false;
     public float timeRemainf = 0f;
     public float decisionTime = 0f;
+    public bool enableFever = false;
+    public float feverAlpha = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +32,12 @@ public class RecieveGameInformation : MonoBehaviour
         isTrackingUser = ((int)info.w > 0);
     } 
 
-    public void RecieveRemainTimef(Vector2 info)
+    public void RecieveRemainTimef(Vector4 info)
     {
         timeRemainf = info.x;
         decisionTime = info.y;
+        enableFever = (int)info.z > 0;
+        feverAlpha = info.w;
         //Debug.Log("time remain:" + info);
     }
 }

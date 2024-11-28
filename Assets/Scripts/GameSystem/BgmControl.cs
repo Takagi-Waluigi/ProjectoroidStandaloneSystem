@@ -16,6 +16,7 @@ public class BgmControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        audioSource.pitch = (info.enableFever)? 1.5f : 1.0f;
         if(lastIsGameOver && !info.isGameOver) audioSource.Play();
         if(info.isGameOver) audioSource.Stop();
     

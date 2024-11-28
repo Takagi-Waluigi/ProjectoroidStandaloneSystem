@@ -9,7 +9,10 @@ public class GamePlayUIManager : MonoBehaviour
     [SerializeField] RecieveGameInformation info;
     [SerializeField] UIDocument _uiDocument;
     [SerializeField] int channel = 0;
+    float frameRate = 30f;
+    float lastTime = 0;
     Label scoreElement, subInfoElement;
+    int uiScore = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,18 @@ public class GamePlayUIManager : MonoBehaviour
         switch(channel)
         {
             case 0:
-                scoreElement.text = info.score.ToString();
+                if(Time.time - lastTime > 1f / frameRate)
+                {
+                    uiScore ++;
+                    lastTime = Time.time;
+                }
+                
+                if(uiScore > info.score) uiScore = info.score;
+                float radius = (info.enableFever)? 20f : 0f;
+
+                scoreElement.style.fontSize = 60 + radius * Mathf.Sin(Time.time * 4.0f);
+                
+                scoreElement.text = uiScore.ToString();
                 //❤ ❤ ❤ ❤ ❤ 
                 string hitPointHeart = "";
                 for(int i = 0; i < 5 - info.hitPoint; i ++)
