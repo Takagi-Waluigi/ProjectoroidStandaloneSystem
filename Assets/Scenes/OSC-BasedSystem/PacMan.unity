@@ -200,7 +200,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 003cdf68ac383ec4fa4d6f040433309d, type: 2}
+  - {fileID: 2100000, guid: b2e445e9cddcd45e79b2c828d7b72faa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -501,10 +501,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973cfea1cbbe00b4ab8d679414baded9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: e0674d5620aad0a429d102bb9d3047fa, type: 2}
+  coinMaterial: {fileID: 2100000, guid: e0674d5620aad0a429d102bb9d3047fa, type: 2}
+  feverRenderer: {fileID: 107395191}
   info: {fileID: 194925756}
-  feverColor: {r: 1, g: 0.20433596, b: 0.05098039, a: 1}
+  feverCoinColor: {r: 1, g: 0.042452812, b: 0.14419705, a: 1}
   defaultColor: {r: 0.9529412, g: 0.74509805, b: 0.20392157, a: 1}
+  feverColor: {r: 1, g: 0.20433596, b: 0.05098039, a: 1}
   frequency: 8
 --- !u!1001 &278073363
 PrefabInstance:

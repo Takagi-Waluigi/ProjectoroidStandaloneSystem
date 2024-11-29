@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class FeverTimeVisualChanger : MonoBehaviour
 {
-    [SerializeField] Material material;
+    [SerializeField] Material coinMaterial;
+    [SerializeField] MeshRenderer feverRenderer;
     [SerializeField] RecieveGameInformation info;
-    [SerializeField] Color feverColor;
+    [SerializeField] Color feverCoinColor;
     [SerializeField] Color defaultColor;
+    [SerializeField] Color feverColor;
     [SerializeField] float frequency = 2.0f;
     // Start is called before the first frame update
     void Start()
@@ -18,17 +20,20 @@ public class FeverTimeVisualChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float alpha = (info.feverAlpha > 0)? info.feverAlpha : 0.0f;
+        feverRenderer.material.color = new Color(feverColor.r, feverColor.g, feverColor.b, alpha);
+
         Color areaColor = defaultColor;
 
         if(info.enableFever)
         {
             float difference = this.transform.position.x;
-            areaColor.r = feverColor.r * 0.75f + feverColor.r * 0.25f * Mathf.Sin(info.timeRemainf * frequency - difference);
-            areaColor.g = feverColor.g * 0.75f + feverColor.g * 0.25f * Mathf.Sin(info.timeRemainf * frequency - difference);
-            areaColor.b = feverColor.b * 0.75f + feverColor.b * 0.25f * Mathf.Sin(info.timeRemainf * frequency - difference);
+            areaColor.r = feverCoinColor.r * 0.75f + feverCoinColor.r * 0.25f * Mathf.Sin(info.timeRemainf * frequency - difference);
+            areaColor.g = feverCoinColor.g * 0.75f + feverCoinColor.g * 0.25f * Mathf.Sin(info.timeRemainf * frequency - difference);
+            areaColor.b = feverCoinColor.b * 0.75f + feverCoinColor.b * 0.25f * Mathf.Sin(info.timeRemainf * frequency - difference);
         }
 
-        material.color = areaColor;
+        coinMaterial.color = areaColor;
 
     }
 }
