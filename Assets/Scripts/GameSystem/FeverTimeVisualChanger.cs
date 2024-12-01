@@ -1,39 +1,77 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class FeverTimeVisualChanger : MonoBehaviour
 {
-    [SerializeField] Material coinMaterial;
-    [SerializeField] MeshRenderer feverRenderer;
+    [Header("オブジェクト設定")]
     [SerializeField] RecieveGameInformation info;
+
+    [Header("Fever本体関連")]
+    [SerializeField] Material coinMaterial;
+    [SerializeField] Transform feverTransform;
+    [SerializeField] float baseScale = 0.1f;
+    [SerializeField] PostProcessVolume postProcessVolume;
+    [SerializeField] [ColorUsage(false, true)] Color bloomColor;    
+    
+    [Header("Fever周辺関連")]
+    GameObject[] coinObjects;
     [SerializeField] Color feverCoinColor;
     [SerializeField] Color defaultColor;
-    [SerializeField] Color feverColor;
     [SerializeField] float frequency = 2.0f;
+    [SerializeField] float frameRate = 30f;
+    [SerializeField] MeshRenderer pacmanRendererOpen;
+    [SerializeField] MeshRenderer pacmanRendererClose;
+
+    [SerializeField] Material defaultPacmanMaterial;
+    [SerializeField] Material powerUpPacmanMaterial;
+    float lastUpdateTime = 0f;
+    
+    Bloom bloom;
     // Start is called before the first frame update
     void Start()
     {
-        
+        postProcessVolume.profile.TryGetSettings<Bloom>(out bloom);
+
+        coinObjects = GameObject.FindGameObjectsWithTag("Coin");
+        Debug.Log("coint number:" + coinObjects.Length);
     }
 
     // Update is called once per frame
     void Update()
-    {
-        float alpha = (info.feverAlpha > 0)? info.feverAlpha : 0.0f;
-        feverRenderer.material.color = new Color(feverColor.r, feverColor.g, feverColor.b, alpha);
+    {        
+        float scale = baseScale * info.feverAlpha;
+        feverTransform.localScale = new Vector3(scale, scale, scale);
 
-        Color areaColor = defaultColor;
+        float wavingColor = bloomColor.r + 0.45f * Mathf.Sin(Time.time * 5.0f);
+        bloom.color.value = new Color(wavingColor, bloomColor.g, bloomColor.b);
 
-        if(info.enableFever)
+        if(Time.time - lastUpdateTime > 1f / frameRate)
         {
-            float difference = this.transform.position.x;
-            areaColor.r = feverCoinColor.r * 0.75f + feverCoinColor.r * 0.25f * Mathf.Sin(info.timeRemainf * frequency - difference);
-            areaColor.g = feverCoinColor.g * 0.75f + feverCoinColor.g * 0.25f * Mathf.Sin(info.timeRemainf * frequency - difference);
-            areaColor.b = feverCoinColor.b * 0.75f + feverCoinColor.b * 0.25f * Mathf.Sin(info.timeRemainf * frequency - difference);
+            foreach(GameObject coinObject in coinObjects)
+            {
+                Color coinColor = defaultColor;
+
+                if(info.enableFever)
+                {
+                    float position_x = coinObject.transform.position.x;
+                    float diff = position_x / 4 * Mathf.PI * 8f;
+                    float alpha = 0.75f + 0.25f * Mathf.Sin(info.timeRemainf * frequency  - diff);
+                    coinColor = new Color(feverCoinColor.r, feverCoinColor.g, feverCoinColor.b) * alpha;;
+                }
+
+                var renderer = coinObject.GetComponent<MeshRenderer>();
+                renderer.material.color = coinColor; 
+            }
+
+            pacmanRendererOpen.material = (info.enableFever)? powerUpPacmanMaterial : defaultPacmanMaterial;
+            pacmanRendererClose.material = (info.enableFever)? powerUpPacmanMaterial : defaultPacmanMaterial;
+            lastUpdateTime = Time.time;
         }
 
-        coinMaterial.color = areaColor;
 
+        
     }
 }
