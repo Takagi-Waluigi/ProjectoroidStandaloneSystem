@@ -52,8 +52,8 @@ public class GamePlayUIManager : MonoBehaviour
             break;
 
             case 1:
-                scoreElement.text = info.score.ToString();
-                subInfoElement.text = "Time: " + info.timeRemainf.ToString("f2");
+                scoreElement.text = info.score.ToString() + "/ 6";
+                subInfoElement.text = "Time: " + ((int)info.timeRemainf).ToString();
             break;
 
         }

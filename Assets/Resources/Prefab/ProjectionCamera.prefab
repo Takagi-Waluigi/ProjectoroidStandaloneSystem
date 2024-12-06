@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 2857844088465035613}
+  userAreaVisualControl: {fileID: 0}
 --- !u!114 &7910644213390780331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +247,8 @@ MonoBehaviour:
   projectionCamera: {fileID: 2857844088465035613}
   screenBlindObject: {fileID: 7381829043488071285, guid: 970ba6a068c318044ae930eaa9e8e00d, type: 3}
   localHeight: 0.7
-  ratio: 0.7
+  blurWidthRatio: 0.5
+  blurScale: 40
 --- !u!1 &8129304103917451986
 GameObject:
   m_ObjectHideFlags: 0

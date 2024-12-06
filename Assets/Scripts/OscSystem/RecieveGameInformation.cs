@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class RecieveGameInformation : MonoBehaviour
 {
     public int score = 0;
@@ -12,6 +12,8 @@ public class RecieveGameInformation : MonoBehaviour
     public float decisionTime = 0f;
     public bool enableFever = false;
     public float feverAlpha = 0f;
+    public bool isMemoryPhase = false;
+    public int targetCardId = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,14 +32,31 @@ public class RecieveGameInformation : MonoBehaviour
         hitPoint = (int)info.y;
         isGameOver = ((int)info.z > 0);
         isTrackingUser = ((int)info.w > 0);
+        
+        
     } 
 
     public void RecieveRemainTimef(Vector4 info)
     {
         timeRemainf = info.x;
         decisionTime = info.y;
-        enableFever = (int)info.z > 0;
-        feverAlpha = info.w;
+
+        var sceneName = SceneManager.GetActiveScene().name;
+
+        if(sceneName == "PacMan")
+        {
+            enableFever = (int)info.z > 0;
+            feverAlpha = info.w;
+        }
+        else
+        {
+            targetCardId = (int)info.z;
+            isMemoryPhase = ((int)info.w > 0);
+
+        }
+       
         //Debug.Log("time remain:" + info);
+
+       
     }
 }
