@@ -52,7 +52,7 @@ public class GamePlayUIManager : MonoBehaviour
             break;
 
             case 1:
-                scoreElement.text = info.score.ToString() + "/ 6";
+                scoreElement.text = info.score.ToString() + "/ 5";
                 subInfoElement.text = "Time: " + ((int)info.timeRemainf).ToString();
             break;
 

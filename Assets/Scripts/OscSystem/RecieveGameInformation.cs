@@ -14,6 +14,7 @@ public class RecieveGameInformation : MonoBehaviour
     public float feverAlpha = 0f;
     public bool isMemoryPhase = false;
     public int targetCardId = 0;
+    public int matchStatus = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,6 @@ public class RecieveGameInformation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void RecieveStaticGameInfo(Vector4 info)
@@ -58,5 +58,11 @@ public class RecieveGameInformation : MonoBehaviour
         //Debug.Log("time remain:" + info);
 
        
+    }
+
+    public void RecieveMatchStatus(float info)
+    {
+        Debug.Log(info);
+        matchStatus = (int)info;
     }
 }

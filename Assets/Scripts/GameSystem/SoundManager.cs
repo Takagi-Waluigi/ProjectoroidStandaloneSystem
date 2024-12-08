@@ -12,9 +12,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip scoreUpFeverSoundEffect;
     [SerializeField] AudioClip hitSoundEffect;
     [SerializeField] AudioClip gameOverSoundEffect;
+    [SerializeField] AudioClip wrongSoundEffect;
     int lastScore = 0;
     int lastHitPoint = 0;
     bool lastGameOver = false;
+    int lastMatchStatus = 0;
     float pitch = 1;
     // Start is called before the first frame update
     void Start()
@@ -38,9 +40,11 @@ public class SoundManager : MonoBehaviour
         }
         if(!info.isGameOver && info.hitPoint != lastHitPoint) audioSource.PlayOneShot(hitSoundEffect);
         if(info.isGameOver != lastGameOver && info.isGameOver) audioSource.PlayOneShot(gameOverSoundEffect);
-
+        if(info.matchStatus == 1 && lastMatchStatus == 0) audioSource.PlayOneShot(wrongSoundEffect);
+        
         lastScore = info.score;
         lastHitPoint = info.hitPoint;
         lastGameOver = info.isGameOver;
+        lastMatchStatus = info.matchStatus;
     }
 }
