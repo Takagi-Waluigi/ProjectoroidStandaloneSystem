@@ -8,7 +8,8 @@ public class LeafInstancing : MonoBehaviour
     [SerializeField] int num = 100;
     // Start is called before the first frame update
     void Start()
-    {
+    {        
+        Random.InitState(10);
         for(int i = 0; i < num; i ++)
         {
             var leaf = GameObject.Instantiate(baseObject, baseTransform);
@@ -20,7 +21,7 @@ public class LeafInstancing : MonoBehaviour
             );
 
             Quaternion rotation = Quaternion.Euler(new Vector3(90f, Random.Range(-180f, 180f), 0f));
-            float scale = Random.Range(0.02f, 0.1f);
+            float scale = Random.Range(0.02f, 0.075f);
 
             leaf.transform.localPosition = position;
             leaf.transform.localRotation = rotation;

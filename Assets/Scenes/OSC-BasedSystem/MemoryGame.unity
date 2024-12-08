@@ -358,7 +358,7 @@ MonoBehaviour:
   baseTransform: {fileID: 1307676115}
   baseObject: {fileID: 7302289957298497217, guid: 7e176acc97f8a3641be4ae6407aef394, type: 3}
   spreadAreaSize: 6
-  num: 200
+  num: 300
 --- !u!1 &269736413
 GameObject:
   m_ObjectHideFlags: 0
