@@ -38,7 +38,7 @@ public class GamePlayUIManager : MonoBehaviour
                 if(uiScore > info.score) uiScore = info.score;
                 float radius = (info.enableFever)? 20f : 0f;
 
-                scoreElement.style.fontSize = 60 + radius * Mathf.Sin(Time.time * 4.0f);
+                scoreElement.style.fontSize = 60 + radius * Mathf.Sin(info.timeRemainf * 4.0f);
                 
                 scoreElement.text = uiScore.ToString();
                 //❤ ❤ ❤ ❤ ❤ 
@@ -52,8 +52,12 @@ public class GamePlayUIManager : MonoBehaviour
             break;
 
             case 1:
-                scoreElement.text = info.score.ToString() + "/ 5";
+                scoreElement.text = info.score.ToString();
+
+                radius = (info.timeRemainf < 30f)? 10f : 0f;
+                subInfoElement.style.fontSize = 28 + radius * Mathf.Sin(info.timeRemainf * 4.0f);
                 subInfoElement.text = "Time: " + ((int)info.timeRemainf).ToString();
+                
             break;
 
         }
