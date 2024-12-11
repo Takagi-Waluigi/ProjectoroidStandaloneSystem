@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/OSC-BasedSystem/MemoryGame.unity
-    guid: 968adbfc056df9f11996888e6134f301
-  - enabled: 1
     path: Assets/Scenes/OSC-BasedSystem/PacMan.unity
     guid: 000b45c6388dd1e028ebca9e35e6e30d
+  - enabled: 1
+    path: Assets/Scenes/OSC-BasedSystem/MemoryGame.unity
+    guid: 968adbfc056df9f11996888e6134f301
   m_configObjects: {}
