@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PTPS_Simple : MonoBehaviour
 {
+    [SerializeField] RecieveGameInformation info;
     [SerializeField] Transform screen_1;
     [SerializeField] Transform screen_2;
     [SerializeField] Transform userTransform;
@@ -19,6 +20,7 @@ public class PTPS_Simple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.GetComponent<MeshRenderer>().enabled = info.enablePTPS;
         //配列の初期化
         dp_dynamicArray.Clear();
 

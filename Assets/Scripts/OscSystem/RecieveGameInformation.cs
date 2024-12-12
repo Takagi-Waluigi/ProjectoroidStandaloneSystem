@@ -15,6 +15,7 @@ public class RecieveGameInformation : MonoBehaviour
     public bool isMemoryPhase = false;
     public int targetCardId = 0;
     public int matchStatus = 0;
+    public bool enablePTPS = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,9 +61,10 @@ public class RecieveGameInformation : MonoBehaviour
        
     }
 
-    public void RecieveMatchStatus(float info)
+    public void RecieveMatchStatus(Vector2 info)
     {
         Debug.Log(info);
-        matchStatus = (int)info;
+        matchStatus = (int)info.x;
+        enablePTPS = ((int)info.y > 0);
     }
 }

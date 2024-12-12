@@ -318,6 +318,7 @@ MonoBehaviour:
   isMemoryPhase: 0
   targetCardId: 0
   matchStatus: 0
+  enablePTPS: 0
 --- !u!4 &194925757
 Transform:
   m_ObjectHideFlags: 0
@@ -3451,6 +3452,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTPS
       objectReference: {fileID: 0}
+    - target: {fileID: 4428130297982016342, guid: 0d700592769b1794c8f73cebd70795b8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8091427005961889481, guid: 0d700592769b1794c8f73cebd70795b8, type: 3}
+      propertyPath: info
+      value: 
+      objectReference: {fileID: 194925756}
     - target: {fileID: 8091427005961889481, guid: 0d700592769b1794c8f73cebd70795b8, type: 3}
       propertyPath: screen_1
       value: 
@@ -3793,6 +3802,7 @@ GameObject:
   - component: {fileID: 2010721418}
   - component: {fileID: 2010721419}
   - component: {fileID: 2010721420}
+  - component: {fileID: 2010721421}
   m_Layer: 0
   m_Name: GameInfo
   m_TagString: Untagged
@@ -4253,6 +4263,60 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _vector4Event:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector2IntEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector3IntEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2010721421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010721412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f8f979447c54247bcba0d5441e6081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _connection: {fileID: 11400000, guid: c5d12db412678ed44955e55ea61bceae, type: 2}
+  _oscAddress: /gameState/static/2
+  _dataType: 4
+  _event:
+    m_PersistentCalls:
+      m_Calls: []
+  _intEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _vector2Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 194925756}
+        m_TargetAssemblyTypeName: RecieveGameInformation, Assembly-CSharp
+        m_MethodName: RecieveMatchStatus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _vector3Event:
+    m_PersistentCalls:
+      m_Calls: []
   _vector4Event:
     m_PersistentCalls:
       m_Calls: []
